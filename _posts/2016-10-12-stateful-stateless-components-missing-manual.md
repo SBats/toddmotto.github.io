@@ -168,7 +168,7 @@ export class TodosComponent implements OnInit {
     this.todos = this.todoService.getTodos();
   }
   addTodo({label}) {
-    this.todos = [{label, id: this.todos.length + 1}, ...this.todos];
+    this.todos = [{label, id: Date.now().toString()}, ...this.todos];
   }
   completeTodo({todo}) {
     this.todos = this.todos.map(
@@ -364,7 +364,7 @@ const todos = {
       this.todos = this.todoService.getTodos();
     }
     addTodo({ label }) {
-      this.todos = [{ label, id: this.todos.length + 1 }, ...this.todos];
+      this.todos = [{ label, id: Date.now().toString() }, ...this.todos];
     }
     completeTodo({ todo }) {
       this.todos = this.todos.map(
